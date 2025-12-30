@@ -22,7 +22,7 @@ const FaqItem = ({ item, index }) => {
           <div
             className={clsx(
               "h6 text-p4 transition-colors duration-500 max-md:flex max-md:min-h-20 max-md:items-center",
-              active && "max-lg:text-p1",
+              active && "max-lg:text-p1"
             )}
           >
             {item.question}
@@ -32,23 +32,27 @@ const FaqItem = ({ item, index }) => {
         <div
           className={clsx(
             "faq-icon relative flex size-12 items-center justify-center rounded-full border-2 border-s2 shadow-400 transition-all duration-500 group-hover:border-s4",
-            active && "before:bg-p1 after:rotate-0 after:bg-p1",
+            active && "before:bg-p1 after:rotate-0 after:bg-p1"
           )}
         >
           <div className="g4 size-11/12 rounded-full shadow-300" />
         </div>
       </div>
 
-      <SlideDown>
-        {activeId === item.id && (
-          <div className="body-3 px-7 py-3.5">{item.answer}</div>
+      {/* Replace SlideDown with Tailwind animation */}
+      <div
+        className={clsx(
+          "overflow-hidden transition-all duration-300",
+          active ? "max-h-96 mt-3 opacity-100" : "max-h-0 opacity-0"
         )}
-      </SlideDown>
+      >
+        {active && <div className="body-3 px-7 py-3.5">{item.answer}</div>}
+      </div>
 
       <div
         className={clsx(
           "g5 -bottom-7 -top-7 left-0 right-0 -z-1 rounded-3xl opacity-0 transition-opacity duration-500 absolute",
-          active && "opacity-100",
+          active && "opacity-100"
         )}
       >
         <div className="g4 absolute inset-0.5 -z-1 rounded-3xl" />
@@ -57,4 +61,5 @@ const FaqItem = ({ item, index }) => {
     </div>
   );
 };
+
 export default FaqItem;
