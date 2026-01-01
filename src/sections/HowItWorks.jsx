@@ -15,9 +15,10 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section className="py-32 lg:py-40 bg-n1">  {/* Main dark background from template */}
-      <div className="container">  {/* Uses the template's container (max-w-6xl + px) */}
-        <h2 className="h3 md:h2 text-center uppercase text-p4 mb-16 md:mb-20">
+    <section className="py-32 lg:py-40 bg-n1">
+      <div className="container">
+        {/* Section Title */}
+        <h2 className="h3 md:h2 text-center uppercase text-p4 mb-16 md:mb-20 font-[Arial] font-bold">
           How ProgodTivity Works
         </h2>
 
@@ -25,14 +26,21 @@ const HowItWorks = () => {
           {steps.map((s, i) => (
             <div
               key={i}
-              className="rounded-2xl border border-n-3/10 p-8 bg-n-3/5 backdrop-blur-sm"
+              className="rounded-2xl border border-n-3/10 p-8 bg-n-3/5 backdrop-blur-sm font-[Arial] font-bold"
             >
               <div className="flex items-center gap-4 mb-4">
-                <div className="text-3xl font-bold text-p1">{i + 1}</div>
-                {/* Optional: add a number prefix like in many XORA sections */}
+                <div className="text-3xl text-p1 font-[Arial] font-bold">
+                  {i + 1}
+                </div>
               </div>
-              <h3 className="h5 md:h4 mb-4 text-p4">{s.title}</h3>
-              <p className="body-1 text-n-3">{s.desc}</p>
+
+              <h3 className="h5 md:h4 mb-4 text-p4 font-[Arial] font-bold">
+                {s.title}
+              </h3>
+
+              <p className="body-1 text-n-3 font-[Arial] font-bold opacity-90">
+                {s.desc}
+              </p>
             </div>
           ))}
         </div>

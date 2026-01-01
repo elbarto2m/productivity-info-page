@@ -9,20 +9,22 @@ const messages = [
 
 const Motivation = () => {
   return (
-    <section className="relative py-32 lg:py-40 bg-n1 overflow-hidden">
+    <section className="relative py-32 lg:py-40 bg-gradient-to-b from-n1 via-n1 to-n-2 overflow-hidden">
       <Element name="motivation">
         <div className="container">
           <div className="max-w-640 mx-auto text-center">
-            {/* Caption + Main Heading */}
-            <div className="caption small-2 uppercase text-p3 mb-4">
+            {/* Caption */}
+            <div className="small-2 uppercase tracking-widest text-p3 mb-4 opacity-80">
               Gentle & Effective
             </div>
+
+            {/* Heading */}
             <h2 className="h3 lg:h2 uppercase text-p4 mb-10 lg:mb-14">
               Built to Motivate, Not Shame
             </h2>
 
             {/* Description */}
-            <p className="body-1 text-n-3 max-w-512 mx-auto mb-16 lg:mb-20">
+            <p className="body-1 text-n-3 max-w-512 mx-auto mb-16 lg:mb-20 leading-relaxed">
               ProgodTivity is designed to support consistency without guilt.
               No red days. No punishments. Just honest progress.
             </p>
@@ -32,10 +34,23 @@ const Motivation = () => {
               {messages.map((message, index) => (
                 <div
                   key={index}
-                  className="rounded-2xl border border-n-3/10 bg-n-3/5 backdrop-blur-sm p-8 lg:p-10 
-                             transition-all duration-300 hover:border-p1/30 hover:bg-n-3/10"
+                  className="
+                    group relative rounded-2xl p-8 lg:p-10
+                    border border-n-3/10
+                    bg-gradient-to-br from-n-3/10 to-n-3/40
+                    backdrop-blur-sm
+                    transition-all duration-300
+                    hover:-translate-y-1
+                    hover:border-p1/40
+                    hover:shadow-[0_0_40px_-15px_rgba(124,58,237,0.35)]
+                  "
                 >
-                  <p className="h5 lg:h4 text-p3">{message}</p>
+                  {/* Accent line */}
+                  <span className="absolute left-0 top-6 h-10 w-1 rounded-full bg-p1/70 opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                  <p className="h5 lg:h4 text-p3 leading-snug">
+                    {message}
+                  </p>
                 </div>
               ))}
             </div>
